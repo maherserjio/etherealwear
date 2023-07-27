@@ -2,29 +2,53 @@
 
 	"use strict";
 	let prevUrl = undefined;
+	setTimeout(() => {
+		$('.owl-women-item').owlCarousel({
+			items: 5,
+			loop: true,
+			dots: true,
+			nav: true,
+			margin: 30,
+			responsive: {
+				0: {
+					items: 1
+				},
+				600: {
+					items: 2
+				},
+				1000: {
+					items: 3
+				}
+			}
+		})
+	}, 100)
+
 	setInterval(() => {
 		const currUrl = window.location.href;
 		if (currUrl != prevUrl) {
+			console.log('here man')
 			// URL changed
 			prevUrl = currUrl;
-			$('.owl-women-item').owlCarousel({
-				items: 5,
-				loop: true,
-				dots: true,
-				nav: true,
-				margin: 30,
-				responsive: {
-					0: {
-						items: 1
-					},
-					600: {
-						items: 2
-					},
-					1000: {
-						items: 3
+			setTimeout(() => {
+				$('.owl-women-item').owlCarousel({
+					items: 5,
+					loop: true,
+					dots: true,
+					nav: true,
+					margin: 30,
+					responsive: {
+						0: {
+							items: 1
+						},
+						600: {
+							items: 2
+						},
+						1000: {
+							items: 3
+						}
 					}
-				}
-			})
+				})
+			}, 100)
 		}
 	}, 60);
 
