@@ -1,24 +1,26 @@
-<!-- ***** Header Area Start ***** -->
 <header class="header-area header-sticky">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <nav class="main-nav d-flex  justify-content-end">
-                    <!-- ***** Logo Start ***** -->
-                    <a class="mx-auto" [routerLink]="['/home']" >
-                        <img class="logo" src="assets/svg/logo-black.svg" alt="EtherealWear logo">
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
+            <div class="d-flex col-12 justify-content-center col-md-6  justify-content-md-end">
+                <a  [routerLink]="['/home']">
+                    <img class="logo" src="assets/images/logo.png" alt="EtherealWear logo">
+                    <!-- <img class="logo" src="assets/svg/logo-black.svg" alt="EtherealWear logo"> -->
+                </a>
+            </div>
+            <div class="col-6 .d-md-none">
+                <nav class="main-nav d-flex  justify-content-end ">
                     <ul class="nav">
-                        <li class="scroll-to-section"><a [routerLink]="['/home']" [routerLinkActive]="['active']" >Home</a></li>
-                        <li class="scroll-to-section"><a [routerLink]="['/products']" [routerLinkActive]="['active']" >Products</a></li>
-                        <li class="scroll-to-section"><a [routerLink]="['/about']" [routerLinkActive]="['active']" >About Us</a></li>
-                        <li class="scroll-to-section"><a [routerLink]="['/contact']" [routerLinkActive]="['active']" >Contact Us</a></li>
+                        <li class="scroll-to-section"><a [routerLink]="['/home']"
+                                [routerLinkActive]="['active']">Home</a></li>
+                        <li class="scroll-to-section"><a [routerLink]="['/products']"
+                                [routerLinkActive]="['active']">Products</a></li>
+                        <li class="scroll-to-section"><a [routerLink]="['/about']" [routerLinkActive]="['active']">About
+                                Us</a></li>
+                        <li class="scroll-to-section"><a [routerLink]="['/contact']"
+                                [routerLinkActive]="['active']">Contact Us</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </div>
 </header>
-<!-- ***** Header Area End ***** -->

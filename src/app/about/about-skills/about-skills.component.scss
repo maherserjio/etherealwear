@@ -1,0 +1,12 @@
+.left-image-desktop{
+    height: 500px;
+}
+
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    .left-image-desktop{
+        height: 350px;
+    }
+    
+}

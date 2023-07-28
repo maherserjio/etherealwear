@@ -553,9 +553,7 @@ header
   .header-area .container {
     padding: 0px;
   }
-  .header-area .logo {
-    margin-left: 30px;
-  }
+  
   .header-area .menu-trigger {
     display: block !important;
   }
@@ -1035,6 +1033,7 @@ Women
   background-color: transparent;
   line-height: 48px;
   border :1px solid #2a2a2a;
+  border-radius: 50%;
 }
 
 #women .owl-nav .owl-prev {
@@ -1073,6 +1072,8 @@ Women
   background-color: transparent;
   line-height: 48px;
   border :1px solid #2a2a2a;
+  border-radius: 50%;
+
 }
 
 /*
@@ -1383,6 +1384,7 @@ Social
 #social .thumb:hover .icon {
   opacity: 1;
   visibility: visible;
+  border-radius:50%;
 }
 
 #social .thumb .icon h6 {
@@ -1391,14 +1393,14 @@ Social
   font-size: 14px;
   bottom: 40px;
   font-weight: 400;
-  left: 15px;
+  left: 45px;
 }
 
 #social .thumb .icon i {
   color: #fff;
   position: absolute;
   bottom: 15px;
-  left: 15px;
+  left: 45px;
 }
 
 #social .thumb img {
@@ -2028,7 +2030,8 @@ About Us Page
   bottom: 0;
   opacity: 0;
   visibility: hidden;
-  transition: all .3s;
+  transition: all .3s; 
+  border-radius: 50%;
 }
 
 .our-team .team-item .thumb:hover .hover-effect {
