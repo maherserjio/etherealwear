@@ -654,9 +654,10 @@ banner
 
 .main-banner .left-content .inner-content {
   position: absolute;
-  left: 100px;
+  left: 50%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%,-50%);
+  text-align: center;
 }
 
 .main-banner .left-content .inner-content h4 {
@@ -742,6 +743,7 @@ banner
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 15px;
+  transform: translateY(-40px);
 }
 
 .main-banner .right-content .right-first-image .thumb .hover-content p {
@@ -1907,7 +1909,8 @@ About Us Page
 --------------------------------------------- 
 */
 
-.about-page-heading {
+
+.about-page-heading, .home-page-heading {
   margin-top: 160px;
   margin-bottom: 30px;
   background-image: url(../images/about-us-page-heading.jpg);
@@ -2276,7 +2279,7 @@ responsive
 @media (max-width: 767px) {
   .main-banner .left-content .thumb .inner-content {
     left: 50%;
-    top: 47.5%;
+  top: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
   }

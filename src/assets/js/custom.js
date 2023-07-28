@@ -26,7 +26,6 @@
 	setInterval(() => {
 		const currUrl = window.location.href;
 		if (currUrl != prevUrl) {
-			console.log('here man')
 			// URL changed
 			prevUrl = currUrl;
 			setTimeout(() => {

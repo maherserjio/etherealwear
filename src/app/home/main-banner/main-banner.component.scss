@@ -2,7 +2,7 @@
 .main-border-button{
   display: flex;
   justify-content: center;
-  margin-top: -20px;
+  transform: translateY(-25px);
 }
 
 .round--button{
@@ -12,10 +12,6 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-}
-
-.ml-50{
-  margin-left: 50px;
 }
 
 
