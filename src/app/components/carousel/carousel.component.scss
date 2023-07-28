@@ -1,6 +1,12 @@
 // `sm` applies to x-small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
-    .h-sm-350{
+    .carousel-images{
       height: 350px;
     }
   }
+  @media only screen and (max-width: 320px)  {
+    .carousel-images{
+      height: 300px;
+    }
+  }
+  

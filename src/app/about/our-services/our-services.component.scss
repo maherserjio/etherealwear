@@ -1,16 +1,19 @@
-// .item-image-1,
-// .item-image-3,
-// .item-image-2 {
-//     height: 300px;
-
-// }
 
 // `sm` applies to x-small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
     .item-image-1,
     .item-image-3,
     .item-image-2 {
-        height: 250;
+        height: 250px;
     
     }
 }
+@media only screen and (max-width: 320px)  {
+    .item-image-1,
+    .item-image-3,
+    .item-image-2 {
+        height: 200px;
+    
+    }
+  }
+  

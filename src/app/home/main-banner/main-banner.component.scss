@@ -1,12 +1,21 @@
 // `xs` returns only a ruleset and no media query
 // ... { ... }
 
+
+
+
 // `sm` applies to x-small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
-    .h-sm-350{
+    .banner-images{
       height: 350px;
     }
   }
+  @media only screen and (max-width: 320px)  {
+    .banner-images{
+      height: 300px;
+    }
+  }
+  
 
 // `md` applies to small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) { 

@@ -8,5 +8,10 @@
     .left-image-desktop{
         height: 350px;
     }
-    
 }
+@media only screen and (max-width: 320px)  {
+    .left-image-desktop{
+        height: 300px;
+    }
+  }
+  
