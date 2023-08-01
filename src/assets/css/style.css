@@ -1449,6 +1449,7 @@ Subscribe
 }
 
 .subscribe form button {
+  border-radius: 50%;
   width: 44px;
   height: 44px;
   display: inline-block;
@@ -2195,6 +2196,7 @@ contact Us Page
 }
 
 .contact-us form button {
+  border-radius: 50%;
   width: 44px;
   height: 44px;
   display: inline-block;
