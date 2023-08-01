@@ -25,3 +25,16 @@
         height: 250px;
     }
 }
+
+
+.round--button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    white-space: pre;
+    cursor: pointer;
+  }
+  
