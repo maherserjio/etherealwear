@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { ContactRoutingModule } from './contact-routing.module';
 import { ContactComponent } from './contact.component';
-import { MainBannerComponent } from './main-banner/main-banner.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [ContactComponent, MainBannerComponent, ContactFormComponent],
-  imports: [CommonModule, ContactRoutingModule],
+  declarations: [ContactComponent, ContactFormComponent],
+  imports: [CommonModule, ContactRoutingModule, SharedModule],
 })
 export class ContactModule {}

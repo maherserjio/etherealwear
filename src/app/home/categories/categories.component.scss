@@ -1,0 +1,47 @@
+
+.main-border-button{
+    display: flex;
+    justify-content: center;
+    transform: translateY(-25px);
+  }
+  
+  .round--button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  
+  // `sm` applies to x-small devices (portrait phones, less than 576px)
+  @media (max-width: 575.98px) {
+      .banner-images{
+        height: 350px;
+      }
+    }
+    @media only screen and (max-width: 320px)  {
+      .banner-images{
+        height: 300px;
+      }
+    }
+    
+  
+  // `md` applies to small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) { 
+      .main-banner .left-content .inner-content h4 {
+          font-size: 24px;
+      }
+   }
+  
+  // `lg` applies to medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) { 
+     
+   }
+  
+  // `xl` applies to large devices (desktops, less than 1200px)
+  @media (max-width: 1199.98px) {  }
+  
+  // `xxl` applies to x-large devices (large desktops, less than 1400px)
+  @media (max-width: 1399.98px) {  }
