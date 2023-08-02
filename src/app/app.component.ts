@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './services/api.service';
+import { IFooter } from './interfaces/footer.interface';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,7 @@ import { ApiService } from './services/api.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  footerData!: IFooter;
   constructor(private _apiService: ApiService) {}
 
   ngOnInit(): void {
@@ -14,8 +16,8 @@ export class AppComponent implements OnInit {
   }
 
   getFooterData(): void {
-    this._apiService.get('footer').subscribe((response) => {
-      console.log(response);
+    this._apiService.get('footer').subscribe((response: IFooter) => {
+      this.footerData = response;
     });
   }
 }

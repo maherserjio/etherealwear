@@ -8,9 +8,8 @@
                         <img class="logo" src="assets/images/logo.png" alt="EtherealWear logo">
                     </div>
                     <ul>
-                        <!-- [innerHTML]="markdownString | marked" -->
-                        <li><a href="#">ethereal.wear1@gmail.com</a></li>
-                        <li><a href="#">961-70-038900</a></li>
+                        <li><a class="text-white" [innerHTML]="footerData.email | marked" >ethereal.wear1@gmail.com</a></li>
+                        <li><a class="text-white" [innerHTML]="footerData.phone_number | marked" >961-70-038900</a></li>
                     </ul>
                 </div>
             </div>
