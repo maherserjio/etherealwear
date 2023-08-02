@@ -1,7 +1,17 @@
 (function ($) {
-
+	$(window).scrollTop(0);
 	"use strict";
 	let prevUrl = undefined;
+
+	setTimeout(() => {
+		$("#top").hide();
+	}, 100)
+
+	setTimeout(() => {
+		$("#top").hide();
+		$("#top").slideDown("slow");
+	}, 200)
+
 	setTimeout(() => {
 		$('.owl-women-item').owlCarousel({
 			items: 5,
@@ -23,9 +33,15 @@
 		})
 	}, 100)
 
+
 	setInterval(() => {
 		const currUrl = window.location.href;
 		if (currUrl != prevUrl) {
+			$("#top").hide();
+			$(window).scrollTop(0);
+			setTimeout(() => {
+				$("#top").slideDown("slow");
+			}, 500)
 			// URL changed
 			prevUrl = currUrl;
 			setTimeout(() => {
@@ -50,6 +66,7 @@
 			}, 100)
 		}
 	}, 60);
+
 
 	$(window).scroll(function () {
 		var scroll = $(window).scrollTop();

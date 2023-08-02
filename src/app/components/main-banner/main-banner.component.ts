@@ -7,5 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class MainBannerComponent {
   @Input() title!: string;
+  @Input() isHomeBanner = false;
+
   constructor() {}
 }

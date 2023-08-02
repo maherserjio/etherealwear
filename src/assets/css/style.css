@@ -1500,7 +1500,7 @@ footer
 footer {
   margin-top: 60px;
   padding: 60px 0px 30px 0px;
-  background-color: #2a2a2a;
+  background-color: #230109;
 }
 
 footer .logo {
@@ -2285,9 +2285,7 @@ responsive
     transform: translate(-50%,-50%);
     text-align: center;
   }
-  .subscribe form button {
-    width: 100%;
-  }
+ 
   footer {
     text-align: center;
   }

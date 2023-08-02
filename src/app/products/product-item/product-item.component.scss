@@ -1,33 +1,4 @@
-.item-image {
-    height: 600px;
-}
-@media only screen and (max-width: 768px) {
-    .item-image {
-        height: 500px;
-    }
-}
-
-@media only screen and (max-width: 425px) {
-    .item-image {
-        height: 350px;
-    }
-}
-
-
-@media only screen and (max-width: 375px) {
-    .item-image {
-        height: 300px;
-    }
-}
-
-@media only screen and (max-width: 320px) {
-    .item-image {
-        height: 250px;
-    }
-}
-
-
-.round--button{
+.round--button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,5 +7,4 @@
     border-radius: 50%;
     white-space: pre;
     cursor: pointer;
-  }
-  
+}
