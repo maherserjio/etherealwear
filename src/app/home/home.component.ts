@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../services/api.service';
 import { IHome } from '../interfaces/home.interface';
 import { apiURL } from '../app.variable';
+import { UtilitiesService } from '../services/utilities/utilities.service';
+import { ApiService } from '../services/api/api.service';
 
 @Component({
   selector: 'app-home',
@@ -9,52 +10,27 @@ import { apiURL } from '../app.variable';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  isLoading = false;
+  backgroundImageUrl!: string;
   homeData!: IHome;
-  constructor(private _apiService: ApiService) {}
+  constructor(
+    private _apiService: ApiService,
+    private _utilitiesService: UtilitiesService
+  ) {}
 
   ngOnInit(): void {
-    this.stopAnimation();
-    this.startAnimation();
+    this._utilitiesService.initializeCarouselConfig();
+    this.getHomeData();
+  }
+
+  public getHomeData(): void {
+    this.isLoading = true;
     this._apiService.get('home').subscribe((response: IHome) => {
-      this.stopAnimation();
-      this.slideBanner();
+      this.isLoading = false;
+      this._utilitiesService.slideBanner();
       this.homeData = response;
-      this.homeData.banner.background_Image.url =
+      this.backgroundImageUrl =
         apiURL + this.homeData.banner.background_Image.url;
     });
-  }
-
-  public startAnimation() {
-    $('#preloader').animate(
-      {
-        visiblity: 'visible',
-      },
-      1000
-    );
-    $('#preloader').animate(
-      {
-        opacity: '1',
-      },
-      20000
-    );
-  }
-
-  public stopAnimation() {
-    $('#preloader').animate(
-      {
-        visiblity: 'hidden',
-      },
-      1000
-    );
-  }
-
-  public slideBanner(): void {
-    setTimeout(() => {
-      $('#top').hide();
-      $(window).scrollTop(0);
-      setTimeout(() => {
-        $('#top').slideDown('slow');
-      }, 500);
-    }, 1);
   }
 }

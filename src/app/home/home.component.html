@@ -1,9 +1,13 @@
-<ng-container *ngIf="homeData">
-    <app-main-banner [isHomeBanner]="true" [title]="homeData.banner.title" [backgroundImageUrl]="homeData.banner.background_Image.url"></app-main-banner>
+<ng-container *ngIf="homeData && !isLoading">
+    <app-main-banner [isHomeBanner]="true" [title]="homeData.banner.title" [backgroundImageUrl]="backgroundImageUrl"></app-main-banner>
     <app-categories></app-categories>
     <app-carousel></app-carousel>
     <app-explore></app-explore>
     <app-social-media></app-social-media>
     <app-news-letter></app-news-letter>
+</ng-container>
+
+<ng-container *ngIf="isLoading">
+    <app-loader></app-loader>
 </ng-container>
 

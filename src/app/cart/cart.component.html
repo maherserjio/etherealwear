@@ -1,2 +1,9 @@
-<app-main-banner [title]="'Shopping Cart'"></app-main-banner>
-<app-cart-table></app-cart-table>
+<ng-container *ngIf="cartData && !isLoading">
+    <app-main-banner [title]="cartData.banner.title" [backgroundImageUrl]="backgroundImageUrl"></app-main-banner>
+    <app-cart-table></app-cart-table>
+</ng-container>
+
+<ng-container *ngIf="isLoading">
+    <app-loader></app-loader>
+</ng-container>
+

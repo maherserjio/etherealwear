@@ -1,5 +1,11 @@
-<app-main-banner [title]="'About Our Company'"></app-main-banner>
-<app-about-skills></app-about-skills>
-<!-- <app-our-team></app-our-team> -->
-<app-our-services></app-our-services>
-<app-news-letter></app-news-letter>
+<ng-container *ngIf="!isLoading && aboutData">
+    <app-main-banner [title]="aboutData.banner.title"  [backgroundImageUrl]="backgroundImageUrl"></app-main-banner>
+    <app-about-skills></app-about-skills>
+    <!-- <app-our-team></app-our-team> -->
+    <app-our-services></app-our-services>
+    <app-news-letter></app-news-letter>
+</ng-container>
+<ng-container *ngIf="isLoading">
+   <app-loader></app-loader>
+</ng-container>
+

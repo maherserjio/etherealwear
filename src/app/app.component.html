@@ -1,3 +1,10 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
-<app-footer *ngIf="footerData" [footerData]="footerData"></app-footer>
+
+<ng-container *ngIf="!isLoading">
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+    <app-footer *ngIf="footerData" [footerData]="footerData"></app-footer>
+</ng-container>
+
+<ng-container *ngIf="isLoading">
+    <app-loader ></app-loader>
+</ng-container>
