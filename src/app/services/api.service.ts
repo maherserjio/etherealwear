@@ -1,12 +1,12 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { apiURL } from '../app.variable';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  apiURL = 'https://strapi-cms-eon8.onrender.com';
   retry = 1;
   constructor(private _http: HttpClient) {}
 
@@ -18,6 +18,6 @@ export class ApiService {
 
   public get<T>(url: string): Observable<any> {
     const fullUrl = `/${url}`;
-    return this._http.get<T>(this.apiURL + fullUrl);
+    return this._http.get<T>(apiURL + fullUrl);
   }
 }

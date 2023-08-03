@@ -8,6 +8,9 @@ import { Component, Input } from '@angular/core';
 export class MainBannerComponent {
   @Input() title!: string;
   @Input() isHomeBanner = false;
+  @Input() backgroundImageUrl!: string;
 
-  constructor() {}
+  constructor() {
+    console.log(this.backgroundImageUrl);
+  }
 }
