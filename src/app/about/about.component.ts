@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ApiService } from '../services/api/api.service';
 import { apiURL } from '../app.variable';
 import { UtilitiesService } from '../services/utilities/utilities.service';
 import { IAboutData } from '../interfaces/about.interface';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent implements OnInit, OnDestroy {
+  sub1!: Subscription;
   isLoading = false;
   backgroundImageUrl!: string;
   aboutData!: IAboutData;
@@ -35,5 +37,9 @@ export class AboutComponent implements OnInit {
       error: (e) => console.error(e),
       complete: () => '',
     });
+  }
+
+  ngOnDestroy(): void {
+    this.sub1.unsubscribe();
   }
 }

@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ApiService } from '../services/api/api.service';
 import { UtilitiesService } from '../services/utilities/utilities.service';
 import { apiURL } from '../app.variable';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss'],
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit, OnDestroy {
+  sub1!: Subscription;
   isLoading = false;
   backgroundImageUrl!: string;
   productsData!: any;
@@ -36,5 +38,9 @@ export class ProductsComponent {
       error: (e) => console.error(e),
       complete: () => '',
     });
+  }
+
+  ngOnDestroy(): void {
+    this.sub1.unsubscribe();
   }
 }

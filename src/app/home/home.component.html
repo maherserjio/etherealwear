@@ -4,7 +4,7 @@
     <app-carousel [sliderData]="homeData.slider_section"></app-carousel>
     <app-explore  [exploreData]="homeData.explore_section"></app-explore>
     <app-social-media [socialMediaData]="homeData.social_media_section"></app-social-media>
-    <app-news-letter></app-news-letter>
+    <app-news-letter [newsLetterData]="newsLetterData"></app-news-letter>
 </ng-container>
 
 <ng-container *ngIf="isLoading">

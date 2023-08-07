@@ -6,7 +6,6 @@ export interface IHome {
   slider_section: ISliderSection;
   explore_section: IExploreSection;
   social_media_section: ISocialMediaSection;
-  news_letter: INewsLetter;
   createdAt: string;
   updatedAt: string;
   __v: number;
@@ -218,17 +217,5 @@ export interface ISocialMediaImage {
   __v: number;
   background_image: IBackgroundImage;
   instagram_link: string;
-  id: string;
-}
-
-export interface INewsLetter {
-  _id: string;
-  title: string;
-  description: string;
-  phone_number: string;
-  email: string;
-  work_hours: string;
-  instagram_link: string;
-  __v: number;
   id: string;
 }

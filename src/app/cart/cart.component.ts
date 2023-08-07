@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UtilitiesService } from '../services/utilities/utilities.service';
 import { ApiService } from '../services/api/api.service';
 import { apiURL } from '../app.variable';
 import { ICartData } from '../interfaces/cart.interface';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, OnDestroy {
+  sub1!: Subscription;
   isLoading = false;
   backgroundImageUrl!: string;
   cartData!: ICartData;
@@ -34,8 +36,10 @@ export class CartComponent implements OnInit {
         this.backgroundImageUrl =
           apiURL + this.cartData.banner.background_Image.url;
       },
-      error: (e) => console.error(e),
-      complete: () => '',
     });
+  }
+
+  ngOnDestroy(): void {
+    this.sub1.unsubscribe();
   }
 }
