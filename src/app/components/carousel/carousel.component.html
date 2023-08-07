@@ -30,13 +30,9 @@
                                 <div class="down-content">
                                     <h4 [innerHTML]="product.Name | marked"></h4>
                                     <span [innerHTML]="product.price | marked"></span>
-                                    <!-- <ul *ngFor="let star of product.stars"  class="stars">
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul> -->
+                                    <ul  class="stars">
+                                        <li *ngFor="let star of  [].constructor(product.stars)"><i class="fa fa-star"></i></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

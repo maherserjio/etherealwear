@@ -7,13 +7,13 @@ import { apiURL } from 'src/app/app.variable';
   styleUrls: ['./categories.component.scss'],
 })
 export class CategoriesComponent implements OnInit {
-  @Input() categories!: ICategoriesCircleSection[];
+  @Input() categoriesData!: ICategoriesCircleSection[];
   apiUrl = apiURL;
   mainCategoryCircleBackgroundImage!: string;
   filteredCategoriesCirlce: ICategoriesCircleSection[] = [];
 
   ngOnInit(): void {
-    for (const category of this.categories) {
+    for (const category of this.categoriesData) {
       if (category.isMainCircle) {
         this.mainCategoryCircleBackgroundImage =
           apiURL + category.background_Image.url;

@@ -1,9 +1,9 @@
 <ng-container *ngIf="homeData && !isLoading">
     <app-main-banner [isHomeBanner]="true" [title]="homeData.banner.title" [backgroundImageUrl]="backgroundImageUrl"></app-main-banner>
-    <app-categories   [categories]="homeData.Categories_circle_section"></app-categories>
+    <app-categories [categoriesData]="homeData.Categories_circle_section"></app-categories>
     <app-carousel [sliderData]="homeData.slider_section"></app-carousel>
-    <app-explore></app-explore>
-    <app-social-media></app-social-media>
+    <app-explore  [exploreData]="homeData.explore_section"></app-explore>
+    <app-social-media [socialMediaData]="homeData.social_media_section"></app-social-media>
     <app-news-letter></app-news-letter>
 </ng-container>
 

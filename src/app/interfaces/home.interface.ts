@@ -217,6 +217,7 @@ export interface ISocialMediaImage {
   title: string;
   __v: number;
   background_image: IBackgroundImage;
+  instagram_link: string;
   id: string;
 }
 

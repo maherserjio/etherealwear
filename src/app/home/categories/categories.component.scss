@@ -14,24 +14,9 @@
     border-radius: 50%;
   }
 
-  .main-banner-image{
-    height: 600px;
-  }
-
   @media (max-width: 2560px) {
     .main-banner-image{
-      height: 1000px;
-    }
-  }
-  
-  @media (max-width: 2000px) {
-    .main-banner-image{
-      height: 800px;
-    }
-  }
-  @media (max-width: 1800px) {
-    .main-banner-image{
-      height: 700px;
+      height: 1200px;
     }
   }
   @media (max-width: 1440px) {
@@ -39,8 +24,7 @@
       height: 600px;
     }
   }
-
-  @media (max-width: 1199.98px) {  
+  @media (max-width: 1024px) {  
     .main-banner-image{
       height: 500px;
     }
@@ -59,10 +43,10 @@
   // `sm` applies to x-small devices (portrait phones, less than 576px)
   @media (max-width: 575.98px) {
       .banner-images{
-        height: 350px;
+        height: 400px;
       }
       .main-banner-image{
-        height: 350px;
+        height: 400px;
       }
       
     }

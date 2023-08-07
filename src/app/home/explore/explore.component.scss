@@ -1,10 +1,55 @@
+.round--button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
 
-.round--button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+@media (max-width: 2560px) {
+  .bottom-image,
+  .top-image {
+    height: 250px;
   }
-  
+}
+
+@media (max-width: 1440px) {
+  .bottom-image,
+  .top-image {
+    height: 250px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bottom-image,
+  .top-image {
+    height: 200px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .bottom-image,
+  .top-image {
+    height: 700px;
+  }
+}
+
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+
+  .bottom-image,
+  .top-image {
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+
+  .bottom-image,
+  .top-image {
+    height: 300px;
+  }
+}

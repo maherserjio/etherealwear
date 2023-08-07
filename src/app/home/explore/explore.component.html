@@ -4,12 +4,12 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="left-content">
-                    <h2>Explore Our Products</h2>
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione adipisci corporis, beatae quas at vitae minima quisquam in distinctio consectetur.</span>
+                    <h2 [innerHTML]="exploreData.title | marked"></h2>
+                    <span [innerHTML]="exploreData.top_description | marked"></span>
                     <div class="quote">
-                        <i class="fa fa-quote-left"></i><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto aperiam suscipit distinctio placeat rerum facilis impedit totam veritatis nostrum eveniet!</p>
+                        <i class="fa fa-quote-left"></i><p [innerHTML]="exploreData.quote | marked"></p>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem obcaecati eius quas qui deleniti delectus reprehenderit. Ea delectus, iure aperiam illum voluptatem voluptatum? Ipsum beatae odit nisi ab quam ex neque omnis dolorum repudiandae aliquid?</p>
+                    <p [innerHTML]="exploreData.quote | marked"></p>
                     <div class="main-border-button">
                         <a class="round--button" [routerLink]="['/products']">Discover More</a>
                     </div>
@@ -22,12 +22,12 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="first-image">
-                                <img class="rounded-circle " src="assets/images/explore-image-01.jpg" alt="">
+                                <img class="rounded-circle top-image " [src]="apiUrl + exploreData.top_image.url" alt="top-image">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="second-image">
-                                <img class="rounded-circle " src="assets/images/explore-image-02.jpg" alt="">
+                                <img class="rounded-circle bottom-image"  [src]="apiUrl + exploreData.bottom_image.url" alt="bottom-image">
                             </div>
                         </div>
                     </div>

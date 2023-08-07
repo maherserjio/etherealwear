@@ -11,7 +11,5 @@ export class CarouselComponent implements OnInit {
   apiUrl = apiURL;
   @Input() sliderData!: ISliderSection;
 
-  ngOnInit(): void {
-    console.log(this.sliderData);
-  }
+  ngOnInit(): void {}
 }
