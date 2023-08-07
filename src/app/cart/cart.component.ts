@@ -26,12 +26,16 @@ export class CartComponent implements OnInit {
 
   public getCartData(): void {
     this.isLoading = true;
-    this._apiService.get('cart').subscribe((response: ICartData) => {
-      this.isLoading = false;
-      this._utilitiesService.slideBanner();
-      this.cartData = response;
-      this.backgroundImageUrl =
-        apiURL + this.cartData.banner.background_Image.url;
+    this._apiService.get('cart').subscribe({
+      next: (response: any) => {
+        this.isLoading = false;
+        this._utilitiesService.slideBanner();
+        this.cartData = response;
+        this.backgroundImageUrl =
+          apiURL + this.cartData.banner.background_Image.url;
+      },
+      error: (e) => console.error(e),
+      complete: () => '',
     });
   }
 }

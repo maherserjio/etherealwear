@@ -24,12 +24,16 @@ export class ContactComponent implements OnInit {
 
   public getContacttData(): void {
     this.isLoading = true;
-    this._apiService.get('contact').subscribe((response: IContactData) => {
-      this.isLoading = false;
-      this._utilitiesService.slideBanner();
-      this.contactData = response;
-      this.backgroundImageUrl =
-        apiURL + this.contactData.banner.background_Image.url;
+    this._apiService.get('contact').subscribe({
+      next: (response: IContactData) => {
+        this.isLoading = false;
+        this._utilitiesService.slideBanner();
+        this.contactData = response;
+        this.backgroundImageUrl =
+          apiURL + this.contactData.banner.background_Image.url;
+      },
+      error: (e) => console.error(e),
+      complete: () => '',
     });
   }
 }

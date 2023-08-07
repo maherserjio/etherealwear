@@ -24,12 +24,16 @@ export class AboutComponent implements OnInit {
 
   public getAboutData(): void {
     this.isLoading = true;
-    this._apiService.get('about').subscribe((response: IAboutData) => {
-      this.isLoading = false;
-      this._utilitiesService.slideBanner();
-      this.aboutData = response;
-      this.backgroundImageUrl =
-        apiURL + this.aboutData.banner.background_Image.url;
+    this._apiService.get('about').subscribe({
+      next: (response: IAboutData) => {
+        this.isLoading = false;
+        this._utilitiesService.slideBanner();
+        this.aboutData = response;
+        this.backgroundImageUrl =
+          apiURL + this.aboutData.banner.background_Image.url;
+      },
+      error: (e) => console.error(e),
+      complete: () => '',
     });
   }
 }

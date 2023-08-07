@@ -123,7 +123,9 @@ export interface IProduct {
   description: string;
   price: string;
   __v: number;
-  image: IImage;
+  main_Image: IImage;
+  details_Top_Image: IImage;
+  details_Bottom_Image: IImage;
   id: string;
 }
 

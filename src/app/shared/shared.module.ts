@@ -5,6 +5,7 @@ import { NewsLetterComponent } from '../home/news-letter/news-letter.component';
 import { RouterModule } from '@angular/router';
 import { MainBannerComponent } from '../components/main-banner/main-banner.component';
 import { LoaderComponent } from '../components/loader/loader.component';
+import { MarkedPipe } from './pipes/marked.pipe';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { LoaderComponent } from '../components/loader/loader.component';
     NewsLetterComponent,
     MainBannerComponent,
     LoaderComponent,
+    MarkedPipe,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
@@ -19,6 +21,7 @@ import { LoaderComponent } from '../components/loader/loader.component';
     NewsLetterComponent,
     MainBannerComponent,
     LoaderComponent,
+    MarkedPipe,
   ],
 })
 export class SharedModule {}

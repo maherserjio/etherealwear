@@ -13,7 +13,7 @@ export class UtilitiesService {
       setTimeout(() => {
         $('#top').slideDown('slow');
       }, 500);
-    }, 1);
+    }, 1000);
   }
 
   public initializeCarouselConfig(): void {
@@ -37,6 +37,6 @@ export class UtilitiesService {
           },
         },
       });
-    }, 1000);
+    }, 500);
   }
 }

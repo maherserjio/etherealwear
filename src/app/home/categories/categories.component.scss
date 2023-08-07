@@ -13,18 +13,67 @@
     height: 100px;
     border-radius: 50%;
   }
+
+  .main-banner-image{
+    height: 600px;
+  }
+
+  @media (max-width: 2560px) {
+    .main-banner-image{
+      height: 1000px;
+    }
+  }
   
+  @media (max-width: 2000px) {
+    .main-banner-image{
+      height: 800px;
+    }
+  }
+  @media (max-width: 1800px) {
+    .main-banner-image{
+      height: 700px;
+    }
+  }
+  @media (max-width: 1440px) {
+    .main-banner-image{
+      height: 600px;
+    }
+  }
+
+  @media (max-width: 1199.98px) {  
+    .main-banner-image{
+      height: 500px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .banner-images{
+      height: 700px;
+    }
+    .main-banner-image{
+      height: 700px;
+    }
+}
+
   
   // `sm` applies to x-small devices (portrait phones, less than 576px)
   @media (max-width: 575.98px) {
       .banner-images{
         height: 350px;
       }
+      .main-banner-image{
+        height: 350px;
+      }
+      
     }
     @media only screen and (max-width: 320px)  {
       .banner-images{
         height: 300px;
       }
+      .main-banner-image{
+        height: 300px;
+      }
+      
     }
     
   
@@ -41,7 +90,9 @@
    }
   
   // `xl` applies to large devices (desktops, less than 1200px)
-  @media (max-width: 1199.98px) {  }
+
   
   // `xxl` applies to x-large devices (large desktops, less than 1400px)
-  @media (max-width: 1399.98px) {  }
+  @media (max-width: 1399.98px) {
+   
+    }

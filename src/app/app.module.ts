@@ -7,10 +7,9 @@ import { FooterComponent } from './components/layout/footer/footer.component';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MarkedPipe } from './shared/pipes/marked.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, MarkedPipe],
+  declarations: [AppComponent, HeaderComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

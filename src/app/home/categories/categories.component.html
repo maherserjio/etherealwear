@@ -1,4 +1,3 @@
-
 <div class="main-banner" id="top">
     <div class="container-fluid">
         <div class="row">
@@ -10,86 +9,86 @@
                                 <a class="round--button" [routerLink]="['/products']">Purchase Now!</a>
                             </div>
                         </div>
-                        <img class="rounded-circle banner-images" src="assets/images/left-banner-image.jpg" alt="">
+                        <img class="rounded-circle main-banner-image" [src]="mainCategoryCircleBackgroundImage" alt="main-banner-image">
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="right-content">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <div class="right-first-image">
+                        <div  class="col-lg-6">
+                            <div *ngIf="filteredCategoriesCirlce[0]" class="right-first-image">
                                 <div class="thumb">
                                     <div class="inner-content">
-                                        <h4>Women</h4>
-                                        <span>Best Clothes For Women</span>
+                                        <h4  [innerHTML]="filteredCategoriesCirlce[0].title | marked"></h4>
+                                        <span  [innerHTML]="filteredCategoriesCirlce[0].description | marked"></span>
                                     </div>
                                     <div class="hover-content rounded-circle">
                                         <div class="inner">
-                                            <h4>Women</h4>
+                                            <h4 [innerHTML]="filteredCategoriesCirlce[0].title | marked"></h4>
                                             <div class="main-border-button ">
-                                                <a class="round--button"  [queryParams]="{category: 'women'}" [routerLink]="['/products']">Discover More</a>
+                                                <a class="round--button" [queryParams]="{category: filteredCategoriesCirlce[0].title }" [routerLink]="['/products']">Discover More</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <img class="rounded-circle banner-images" src="assets/images/baner-right-image-01.jpg">
+                                    <img class="rounded-circle banner-images" [src]="apiUrl + filteredCategoriesCirlce[0].background_Image.url" alt="banner-image-1">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="right-first-image">
+                            <div *ngIf="filteredCategoriesCirlce[1]"  class="right-first-image">
                                 <div class="thumb">
                                     <div class="inner-content">
-                                        <h4>Men</h4>
-                                        <span>Best Clothes For Men</span>
+                                        <h4 [innerHTML]="filteredCategoriesCirlce[1].title | marked"></h4>
+                                        <span [innerHTML]="filteredCategoriesCirlce[1].description | marked"></span>
                                     </div>
                                     <div class="hover-content rounded-circle">
                                         <div class="inner">
                                             <h4>Men</h4>
                                             <div class="main-border-button ">
-                                                <a class="round--button"  [queryParams]="{category: 'men'}" [routerLink]="['/products']">Discover More</a>
+                                                <a class="round--button"  [queryParams]="{category: filteredCategoriesCirlce[1].title }" [routerLink]="['/products']">Discover More</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <img class="rounded-circle banner-images" src="assets/images/baner-right-image-02.jpg">
+                                    <img class="rounded-circle banner-images" [src]="apiUrl + filteredCategoriesCirlce[1].background_Image.url" alt="banner-image-2">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="right-first-image">
+                            <div  *ngIf="filteredCategoriesCirlce[2]" class="right-first-image">
                                 <div class="thumb">
                                     <div class="inner-content">
-                                        <h4>Kids</h4>
-                                        <span>Best Clothes For Kids</span>
+                                        <h4 [innerHTML]="filteredCategoriesCirlce[2].title | marked"></h4>
+                                        <span [innerHTML]="filteredCategoriesCirlce[2].description | marked"></span>
                                     </div>
                                     <div class="hover-content rounded-circle">
                                         <div class="inner">
                                             <h4>Kids</h4>
                                             <div class="main-border-button ">
-                                                <a class="round--button"  [queryParams]="{category: 'kids'}" [routerLink]="['/products']">Discover More</a>
+                                                <a class="round--button"  [queryParams]="{category: filteredCategoriesCirlce[2].title}" [routerLink]="['/products']">Discover More</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <img class="rounded-circle banner-images" src="assets/images/baner-right-image-03.jpg">
+                                    <img class="rounded-circle banner-images" [src]="apiUrl + filteredCategoriesCirlce[2].background_Image.url" alt="banner-image-3">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="right-first-image">
+                            <div *ngIf="filteredCategoriesCirlce[3]" class="right-first-image">
                                 <div class="thumb">
                                     <div class="inner-content">
-                                        <h4>Accessories</h4>
-                                        <span>Best Trend Accessories</span>
+                                        <h4 [innerHTML]="filteredCategoriesCirlce[3].title | marked"></h4>
+                                        <span [innerHTML]="filteredCategoriesCirlce[3].description| marked"></span>
                                     </div>
                                     <div class="hover-content rounded-circle">
                                         <div class="inner">
-                                            <h4>Accessories</h4>
+                                            <h4 [innerHTML]="filteredCategoriesCirlce[3].title| marked"></h4>
                                             <div class="main-border-button ">
-                                                <a class="round--button"  [queryParams]="{category: 'accessories'}" [routerLink]="['/products']">Discover More</a>
+                                                <a class="round--button"  [queryParams]="{category: filteredCategoriesCirlce[3].title}" [routerLink]="['/products']">Discover More</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <img class="rounded-circle banner-images" src="assets/images/baner-right-image-04.jpg">
+                                    <img class="rounded-circle banner-images" [src]="apiUrl + filteredCategoriesCirlce[3].background_Image.url" alt="banner-image-4">
                                 </div>
                             </div>
                         </div>

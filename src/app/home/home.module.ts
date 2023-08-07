@@ -7,6 +7,7 @@ import { ExploreComponent } from './explore/explore.component';
 import { SocialMediaComponent } from './social-media/social-media.component';
 import { SharedModule } from '../shared/shared.module';
 import { CategoriesComponent } from './categories/categories.component';
+import { MarkedPipe } from '../shared/pipes/marked.pipe';
 
 @NgModule({
   declarations: [

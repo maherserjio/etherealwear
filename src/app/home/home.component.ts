@@ -19,18 +19,21 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this._utilitiesService.initializeCarouselConfig();
     this.getHomeData();
   }
-
   public getHomeData(): void {
     this.isLoading = true;
-    this._apiService.get('home').subscribe((response: IHome) => {
-      this.isLoading = false;
-      this._utilitiesService.slideBanner();
-      this.homeData = response;
-      this.backgroundImageUrl =
-        apiURL + this.homeData.banner.background_Image.url;
+    this._apiService.get('home').subscribe({
+      next: (response: IHome) => {
+        this.isLoading = false;
+        this._utilitiesService.slideBanner();
+        this._utilitiesService.initializeCarouselConfig();
+        this.homeData = response;
+        this.backgroundImageUrl =
+          apiURL + this.homeData.banner.background_Image.url;
+      },
+      error: (e) => console.error(e),
+      complete: () => '',
     });
   }
 }
