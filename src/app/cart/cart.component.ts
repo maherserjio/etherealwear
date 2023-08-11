@@ -22,6 +22,7 @@ export class CartComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.hideBanner();
     this._utilitiesService.initializeCarouselConfig();
     this.getCartData();
   }
@@ -37,6 +38,12 @@ export class CartComponent implements OnInit, OnDestroy {
           apiURL + this.cartData.banner.background_Image.url;
       },
     });
+  }
+
+  public hideBanner(): void {
+    setTimeout(() => {
+      $('.page-heading').hide();
+    }, 1000);
   }
 
   ngOnDestroy(): void {

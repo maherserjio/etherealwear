@@ -10,15 +10,15 @@
             <div class="col-6 .d-md-none">
                 <nav class="main-nav d-flex  justify-content-end ">
                     <ul class="nav">
-                        <li class="scroll-to-section"><a [routerLink]="['/home']"
-                                [routerLinkActive]="['active']">HOME</a></li>
-                        <li class="scroll-to-section"><a [routerLink]="['/products']"
+                        <li [routerLink]="['/home']"  class="scroll-to-section"><a [routerLink]="['/home']"
+                                [routerLinkActive]="['active']" >HOME</a></li>
+                        <li [routerLink]="['/products']" class="scroll-to-section"><a [routerLink]="['/products']"
                                 [routerLinkActive]="['active']">PRODUCTS</a></li>
-                        <li class="scroll-to-section"><a [routerLink]="['/about']" [routerLinkActive]="['active']">ABOUT
+                        <li [routerLink]="['/about']"  class="scroll-to-section"><a [routerLink]="['/about']" [routerLinkActive]="['active']">ABOUT
                             </a></li>
-                        <li class="scroll-to-section"><a [routerLink]="['/contact']"
+                        <li [routerLink]="['/contact']" class="scroll-to-section"><a [routerLink]="['/contact']"
                                 [routerLinkActive]="['active']">CONTACT</a></li>
-                                <li class="scroll-to-section"><a [routerLink]="['/cart']"
+                                <li [routerLink]="['/cart']" class="scroll-to-section"><a [routerLink]="['/cart']"
                                     [routerLinkActive]="['active']">CART</a></li>
                     </ul>
                 </nav>

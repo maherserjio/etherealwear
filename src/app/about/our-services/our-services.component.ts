@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { apiURL } from 'src/app/app.variable';
 import { IServicesSection } from 'src/app/interfaces/about.interface';
 
 @Component({
@@ -7,7 +8,8 @@ import { IServicesSection } from 'src/app/interfaces/about.interface';
   styleUrls: ['./our-services.component.scss'],
 })
 export class OurServicesComponent implements OnInit {
-  @Input() servicesData!: IServicesSection[];
+  apiUrl = apiURL;
+  @Input() servicesData!: IServicesSection;
   constructor() {}
   ngOnInit(): void {}
 }

@@ -1,20 +1,62 @@
 
-// `sm` applies to x-small devices (portrait phones, less than 576px)
-@media (max-width: 575.98px) {
+  @media (max-width: 2560px) {
     .item-image-1,
     .item-image-3,
     .item-image-2 {
-        height: 300px;
-    
+        height: 250px;
     }
 }
 
-@media only screen and (max-width: 320px)  {
-    .item-image-1,
+@media (max-width: 1440px) {
+     .item-image-1,
     .item-image-3,
-    .item-image-2 {
-        height: 200px;
-    
+    .item-image-2{
+        height: 250px;
     }
-  }
-  
+}
+
+@media (max-width: 1024px) {
+     .item-image-1,
+    .item-image-3,
+    .item-image-2{
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+     .item-image-1,
+    .item-image-3,
+    .item-image-2{
+        height: 600px;
+    }
+
+}
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+     .item-image-1,
+    .item-image-3,
+    .item-image-2{
+        height: 300px;
+    }
+
+
+}
+
+@media only screen and (max-width: 375px) {
+     .item-image-1,
+    .item-image-3,
+    .item-image-2{
+        height: 250px;
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+     .item-image-1,
+    .item-image-3,
+    .item-image-2{
+        height: 200px;
+    }
+
+}

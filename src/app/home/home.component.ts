@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.hideBanner();
     this.getHomeData();
     this.getNewsLetterData();
   }
@@ -51,6 +52,12 @@ export class HomeComponent implements OnInit, OnDestroy {
           apiURL + this.homeData.banner.background_Image.url;
       },
     });
+  }
+
+  public hideBanner(): void {
+    setTimeout(() => {
+      $('.page-heading').hide();
+    }, 1000);
   }
 
   ngOnDestroy(): void {

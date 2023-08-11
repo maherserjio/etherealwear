@@ -21,6 +21,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.hideBanner();
     this._utilitiesService.initializeCarouselConfig();
     this.getProductsData();
   }
@@ -38,6 +39,12 @@ export class ProductsComponent implements OnInit, OnDestroy {
       error: (e) => console.error(e),
       complete: () => '',
     });
+  }
+
+  public hideBanner(): void {
+    setTimeout(() => {
+      $('.page-heading').hide();
+    }, 1000);
   }
 
   ngOnDestroy(): void {

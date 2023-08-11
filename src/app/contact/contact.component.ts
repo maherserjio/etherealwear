@@ -21,6 +21,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.hideBanner();
     this.getContacttData();
   }
 
@@ -37,6 +38,12 @@ export class ContactComponent implements OnInit, OnDestroy {
       error: (e) => console.error(e),
       complete: () => '',
     });
+  }
+
+  public hideBanner(): void {
+    setTimeout(() => {
+      $('.page-heading').hide();
+    }, 1000);
   }
 
   ngOnDestroy(): void {

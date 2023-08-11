@@ -4,34 +4,18 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-heading">
-                    <h2>Our Services</h2>
-                    <span>Details to details is what makes EtherealWear different from the other themes.</span>
+                    <h2 [innerHTML]="servicesData.title | marked"></h2>
+                    <span [innerHTML]="servicesData.description | marked"></span>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div *ngFor="let card of servicesData.services_card" class="col-lg-4">
                 <div class="service-item">
-                    <h4>Synther Vaporware</h4>
-                    <p>Lorem ipsum dolor sit amet, consecteturti adipiscing elit, sed do eiusmod temp incididunt ut
-                        labore, et dolore quis ipsum suspend.</p>
-                    <img class="rounded-circle item-image-1" src="assets/images/service-01.jpg" alt="">
+                    <h4 [innerHTML]="card.title | marked"></h4>
+                    <p [innerHTML]="card.description | marked"></p>
+                    <img class="rounded-circle item-image-1" [src]="apiUrl + card.image.url" alt="car-image">
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="service-item">
-                    <h4>Locavore Squidward</h4>
-                    <p>Lorem ipsum dolor sit amet, consecteturti adipiscing elit, sed do eiusmod temp incididunt ut
-                        labore, et dolore quis ipsum suspend.</p>
-                    <img class="rounded-circle item-image-2" src="assets/images/service-02.jpg" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="service-item">
-                    <h4>Health Gothfam</h4>
-                    <p>Lorem ipsum dolor sit amet, consecteturti adipiscing elit, sed do eiusmod temp incididunt ut
-                        labore, et dolore quis ipsum suspend.</p>
-                    <img class="rounded-circle item-image-3" src="assets/images/service-03.jpg" alt="">
-                </div>
-            </div>
+            
         </div>
     </div>
 </section>

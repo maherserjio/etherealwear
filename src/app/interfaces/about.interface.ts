@@ -5,7 +5,7 @@ export interface IAboutData {
   published_at: string;
   banner: IBanner;
   Skills_section: ISkillsSection;
-  Services_section: IServicesSection[];
+  Services_section: IServicesSection;
   createdAt: string;
   updatedAt: string;
   __v: number;

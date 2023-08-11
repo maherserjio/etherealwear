@@ -10,8 +10,8 @@
       </div>
       <div class="col-lg-6">
         <div class="section-heading">
-          <h2>Say Hello. Don't Be Shy!</h2>
-          <span>Details to details is what makes EtherealWear different from the other shops.</span>
+          <h2 [innerHTML]="contactData.title | marked"></h2>
+          <span [innerHTML]="contactData.description| marked"></span>
         </div>
         <form id="contact" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="8306e414-0502-407f-bbf9-ee42bfbfbf81">
