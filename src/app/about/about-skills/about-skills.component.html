@@ -4,20 +4,20 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="left-image">
-                    <img class="rounded-circle left-image-desktop" src="assets/images/about-left-image.jpg" alt="">
+                    <img class="rounded-circle left-image-desktop" [src]="apiUrl + skillsData.image.url" alt="image">
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="right-content">
-                    <h4>About Us &amp; Our Skills</h4>
-                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt ut labore.</span>
+                    <h4 [innerHTML]="skillsData.title | marked"></h4>
+                    <span [innerHTML]="skillsData.top_description | marked"></span>
                     <div class="quote">
-                        <i class="fa fa-quote-left"></i><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuski smod kon tempor incididunt ut labore.</p>
+                        <i class="fa fa-quote-left"></i><p [innerHTML]="skillsData.quote | marked"></p>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                    <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="https://www.instagram.com/e.therealwear"><i class="fa fa-instagram"></i></a></li>
+                    <p [innerHTML]="skillsData.bottom_description | marked"></p>
+                    <ul class="mb-2">
+                        <li *ngIf="skillsData.facebook_link"><a [href]="skillsData.facebook_link"><i class="fa fa-facebook"></i></a></li>
+                        <li *ngIf="skillsData.instagram_link"><a [href]="skillsData.instagram_link"><i class="fa fa-instagram"></i></a></li>
                     </ul>
                 </div>
             </div>

@@ -1,9 +1,9 @@
 <ng-container *ngIf="!isLoading && aboutData">
     <app-main-banner [title]="aboutData.banner.title"  [backgroundImageUrl]="backgroundImageUrl"></app-main-banner>
-    <app-about-skills></app-about-skills>
+    <app-about-skills [skillsData]="aboutData.Skills_section"></app-about-skills>
     <!-- <app-our-team></app-our-team> -->
-    <app-our-services></app-our-services>
-    <app-news-letter></app-news-letter>
+    <app-our-services [servicesData]="aboutData.Services_section" ></app-our-services>
+    <app-news-letter [newsLetterData]="newsLetterData"></app-news-letter>
 </ng-container>
 <ng-container *ngIf="isLoading">
    <app-loader></app-loader>

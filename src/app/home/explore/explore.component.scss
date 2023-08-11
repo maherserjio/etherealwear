@@ -46,6 +46,13 @@
   }
 }
 
+@media only screen and (max-width: 375px) {
+  .bottom-image,
+  .top-image{
+    height: 350px;
+  }
+}
+
 @media only screen and (max-width: 320px) {
 
   .bottom-image,

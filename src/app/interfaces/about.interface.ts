@@ -21,6 +21,7 @@ export interface ISkillsSection {
   __v: number;
   image: any;
   instagram_link: string;
+  facebook_link: string;
   id: string;
 }
 

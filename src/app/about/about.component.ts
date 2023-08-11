@@ -4,6 +4,10 @@ import { apiURL } from '../app.variable';
 import { UtilitiesService } from '../services/utilities/utilities.service';
 import { IAboutData } from '../interfaces/about.interface';
 import { Subscription } from 'rxjs';
+import {
+  INewsLetter,
+  INewsLetterResponse,
+} from '../interfaces/news-letter.interface';
 
 @Component({
   selector: 'app-about',
@@ -15,6 +19,8 @@ export class AboutComponent implements OnInit, OnDestroy {
   isLoading = false;
   backgroundImageUrl!: string;
   aboutData!: IAboutData;
+  newsLetterData!: INewsLetter;
+
   constructor(
     private _apiService: ApiService,
     private _utilitiesService: UtilitiesService
@@ -22,6 +28,15 @@ export class AboutComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getAboutData();
+    this.getNewsLetterData();
+  }
+
+  public getNewsLetterData(): void {
+    this.sub1 = this._apiService
+      .get('news-letter')
+      .subscribe((response: INewsLetterResponse) => {
+        this.newsLetterData = response.News_letter;
+      });
   }
 
   public getAboutData(): void {

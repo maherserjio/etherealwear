@@ -1,17 +1,47 @@
-.left-image-desktop{
-    height: 500px;
+@media (max-width: 2560px) {
+    .left-image-desktop {
+        height: 500px;
+    }
 }
 
+@media (max-width: 1440px) {
+    .left-image-desktop {
+        height: 600px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .left-image-desktop {
+        height: 500px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .left-image-desktop {
+        height: 700px;
+    }
+
+}
 
 // `sm` applies to x-small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
-    .left-image-desktop{
+    .left-image-desktop {
+        height: 400px;
+    }
+
+
+}
+
+@media only screen and (max-width: 375px) {
+    .left-image-desktop {
         height: 350px;
     }
+
 }
-@media only screen and (max-width: 320px)  {
-    .left-image-desktop{
+
+@media only screen and (max-width: 320px) {
+    .left-image-desktop {
         height: 300px;
     }
-  }
-  
+
+}
