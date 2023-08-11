@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit {
   sub1!: Subscription;
   sub2!: Subscription;
   isLoading = false;
@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.hideBanner();
     this.getHomeData();
     this.getNewsLetterData();
   }
@@ -52,16 +51,5 @@ export class HomeComponent implements OnInit, OnDestroy {
           apiURL + this.homeData.banner.background_Image.url;
       },
     });
-  }
-
-  public hideBanner(): void {
-    setTimeout(() => {
-      $('.page-heading').hide();
-    }, 1000);
-  }
-
-  ngOnDestroy(): void {
-    this.sub1.unsubscribe();
-    this.sub2.unsubscribe();
   }
 }

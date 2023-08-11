@@ -14,7 +14,7 @@ import {
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
 })
-export class AboutComponent implements OnInit, OnDestroy {
+export class AboutComponent implements OnInit {
   sub1!: Subscription;
   isLoading = false;
   backgroundImageUrl!: string;
@@ -27,7 +27,6 @@ export class AboutComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.hideBanner();
     this.getAboutData();
     this.getNewsLetterData();
   }
@@ -53,15 +52,5 @@ export class AboutComponent implements OnInit, OnDestroy {
       error: (e) => console.error(e),
       complete: () => '',
     });
-  }
-
-  public hideBanner(): void {
-    setTimeout(() => {
-      $('.page-heading').hide();
-    }, 1000);
-  }
-
-  ngOnDestroy(): void {
-    this.sub1.unsubscribe();
   }
 }

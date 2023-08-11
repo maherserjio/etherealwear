@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
 })
-export class CartComponent implements OnInit, OnDestroy {
+export class CartComponent implements OnInit {
   sub1!: Subscription;
   isLoading = false;
   backgroundImageUrl!: string;
@@ -22,7 +22,6 @@ export class CartComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.hideBanner();
     this._utilitiesService.initializeCarouselConfig();
     this.getCartData();
   }
@@ -38,15 +37,5 @@ export class CartComponent implements OnInit, OnDestroy {
           apiURL + this.cartData.banner.background_Image.url;
       },
     });
-  }
-
-  public hideBanner(): void {
-    setTimeout(() => {
-      $('.page-heading').hide();
-    }, 1000);
-  }
-
-  ngOnDestroy(): void {
-    this.sub1.unsubscribe();
   }
 }

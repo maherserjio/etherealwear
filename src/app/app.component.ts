@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
   sub1!: Subscription;
   isLoading = false;
   footerData!: IFooter;
@@ -24,9 +24,5 @@ export class AppComponent implements OnInit, OnDestroy {
       this.isLoading = false;
       this.footerData = response;
     });
-  }
-
-  ngOnDestroy(): void {
-    this.sub1.unsubscribe();
   }
 }

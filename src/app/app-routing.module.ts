@@ -11,10 +11,25 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
-  { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
-  { path: 'contact', loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule) },
-  { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
-  { path: 'cart', loadChildren: () => import('./cart/cart.module').then(m => m.CartModule) },
+  {
+    path: 'about',
+    loadChildren: () =>
+      import('./about/about.module').then((m) => m.AboutModule),
+  },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./contact/contact.module').then((m) => m.ContactModule),
+  },
+  {
+    path: 'products',
+    loadChildren: () =>
+      import('./products/products.module').then((m) => m.ProductsModule),
+  },
+  {
+    path: 'cart',
+    loadChildren: () => import('./cart/cart.module').then((m) => m.CartModule),
+  },
 ];
 
 @NgModule({

@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
-export class ContactComponent implements OnInit, OnDestroy {
+export class ContactComponent implements OnInit {
   sub1!: Subscription;
   isLoading = false;
   backgroundImageUrl!: string;
@@ -21,7 +21,6 @@ export class ContactComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.hideBanner();
     this.getContacttData();
   }
 
@@ -40,13 +39,5 @@ export class ContactComponent implements OnInit, OnDestroy {
     });
   }
 
-  public hideBanner(): void {
-    setTimeout(() => {
-      $('.page-heading').hide();
-    }, 1000);
-  }
-
-  ngOnDestroy(): void {
-    this.sub1.unsubscribe();
-  }
+ 
 }
