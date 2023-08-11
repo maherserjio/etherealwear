@@ -1,6 +1,6 @@
 <ng-container *ngIf="!isLoading && productsData">
     <app-main-banner [title]="productsData.banner.title" [backgroundImageUrl]="backgroundImageUrl"></app-main-banner>
-    <app-products-list></app-products-list>
+    <app-products-list ></app-products-list>
 </ng-container>
 
 <ng-container *ngIf="isLoading">

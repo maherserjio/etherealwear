@@ -16,11 +16,11 @@ export interface IBanner {
   _id: string;
   title: string;
   __v: number;
-  background_Image: IBackgroundImage;
+  background_Image: IImage;
   id: string;
 }
 
-export interface IBackgroundImage {
+export interface IImage {
   _id: string;
   name: string;
   alternativeText: string;
@@ -102,7 +102,7 @@ export interface ICategoriesCircleSection {
   title: string;
   description: string;
   __v: number;
-  background_Image: IBackgroundImage;
+  background_Image: IImage;
   id: string;
 }
 
@@ -181,27 +181,6 @@ export interface IImage {
   id: string;
 }
 
-export interface IImage {
-  _id: string;
-  name: string;
-  alternativeText: string;
-  caption: string;
-  hash: string;
-  ext: string;
-  mime: string;
-  size: number;
-  width: number;
-  height: number;
-  url: string;
-  formats: IFormats;
-  provider: string;
-  related: any[];
-  createdAt: string;
-  updatedAt: string;
-  __v: number;
-  id: string;
-}
-
 export interface ISocialMediaSection {
   _id: string;
   social_media_image: ISocialMediaImage[];
@@ -215,7 +194,7 @@ export interface ISocialMediaImage {
   _id: string;
   title: string;
   __v: number;
-  background_image: IBackgroundImage;
+  background_image: IImage;
   instagram_link: string;
   id: string;
 }
