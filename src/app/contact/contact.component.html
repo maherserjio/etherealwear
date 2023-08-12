@@ -1,6 +1,6 @@
 <ng-container *ngIf="!isLoading">
-    <app-main-banner [title]="contactData.banner.title" [backgroundImageUrl]="backgroundImageUrl"></app-main-banner>
-    <app-contact-form [contactData]="contactData"></app-contact-form>
+    <app-main-banner *ngIf="contactData.banner" [title]="contactData.banner.title" [backgroundImageUrl]="backgroundImageUrl"></app-main-banner>
+    <app-contact-form *ngIf="contactData" [contactData]="contactData"></app-contact-form>
 </ng-container>
 
 <ng-container *ngIf="isLoading">

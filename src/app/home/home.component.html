@@ -1,10 +1,10 @@
 <ng-container *ngIf="homeData && !isLoading">
-    <app-main-banner [isHomeBanner]="true" [title]="homeData.banner.title" [backgroundImageUrl]="backgroundImageUrl"></app-main-banner>
-    <app-categories [categoriesData]="homeData.Categories_circle_section"></app-categories>
-    <app-carousel [sliderData]="homeData.slider_section"></app-carousel>
-    <app-explore  [exploreData]="homeData.explore_section"></app-explore>
-    <app-social-media [socialMediaData]="homeData.social_media_section"></app-social-media>
-    <app-news-letter [newsLetterData]="newsLetterData"></app-news-letter>
+    <app-main-banner *ngIf="homeData.banner" [isHomeBanner]="true" [title]="homeData.banner.title" [backgroundImageUrl]="backgroundImageUrl"></app-main-banner>
+    <app-categories *ngIf="homeData.Categories_circle_section" [categoriesData]="homeData.Categories_circle_section"></app-categories>
+    <app-carousel *ngIf="homeData.slider_section" [sliderData]="homeData.slider_section"></app-carousel>
+    <app-explore *ngIf="homeData.explore_section"  [exploreData]="homeData.explore_section"></app-explore>
+    <app-social-media *ngIf="homeData.social_media_section" [socialMediaData]="homeData.social_media_section"></app-social-media>
+    <app-news-letter *ngIf="newsLetterData" [newsLetterData]="newsLetterData"></app-news-letter>
 </ng-container>
 
 <ng-container *ngIf="isLoading">
