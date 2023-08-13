@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ICategory } from 'src/app/interfaces/categories.interface';
 import { IFooter } from 'src/app/interfaces/footer.interface';
 
 @Component({
@@ -6,6 +7,9 @@ import { IFooter } from 'src/app/interfaces/footer.interface';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
   @Input() footerData!: IFooter;
+  @Input() categoriesData!: ICategory[];
+
+  ngOnInit(): void {}
 }

@@ -16,9 +16,7 @@
             <div class="col-lg-4">
                 <h4>Shopping &amp; Categories</h4>
                 <ul>
-                    <li><a href="#">Men’s Shopping</a></li>
-                    <li><a href="#">Women’s Shopping</a></li>
-                    <li><a href="#">Kid's Shopping</a></li> 
+                    <li *ngFor=" let category of categoriesData"><a [queryParams]="{ categoryName: category.categoryName }"[routerLink]="['products']">{{category.categoryName}} Shopping</a></li>
                 </ul>
             </div>
             <div class="col-lg-4">

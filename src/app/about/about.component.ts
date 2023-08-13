@@ -1,9 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api/api.service';
 import { apiURL } from '../app.variable';
 import { UtilitiesService } from '../services/utilities/utilities.service';
 import { IAboutData } from '../interfaces/about.interface';
-import { Subscription } from 'rxjs';
 import {
   INewsLetter,
   INewsLetterResponse,
@@ -15,7 +14,6 @@ import {
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
-  sub1!: Subscription;
   isLoading = false;
   backgroundImageUrl!: string;
   aboutData!: IAboutData;
@@ -32,7 +30,7 @@ export class AboutComponent implements OnInit {
   }
 
   public getNewsLetterData(): void {
-    this.sub1 = this._apiService
+    this._apiService
       .get('news-letter')
       .subscribe((response: INewsLetterResponse) => {
         this.newsLetterData = response.News_letter;

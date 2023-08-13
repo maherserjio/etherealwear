@@ -1,8 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api/api.service';
 import { UtilitiesService } from '../services/utilities/utilities.service';
 import { apiURL } from '../app.variable';
-import { Subscription } from 'rxjs';
 import { IProductData } from '../interfaces/product.interface';
 import { ICategory } from '../interfaces/categories.interface';
 
@@ -12,11 +11,10 @@ import { ICategory } from '../interfaces/categories.interface';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  sub1!: Subscription;
   isLoading = false;
   backgroundImageUrl!: string;
-  productsData!: any;
-  categoriesData!: ICategory;
+  productsData!: IProductData;
+  categoriesData!: ICategory[];
   constructor(
     private _apiService: ApiService,
     private _utilitiesService: UtilitiesService
@@ -24,8 +22,8 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this._utilitiesService.initializeCarouselConfig();
-    //this.getCategoriesData();
     this.getProductsData();
+    this.getCategoriesData();
   }
 
   public getProductsData(): void {
@@ -43,8 +41,7 @@ export class ProductsComponent implements OnInit {
 
   public getCategoriesData(): void {
     this._apiService.get('categories').subscribe({
-      next: (response: any) => {
-        console.log(response);
+      next: (response: ICategory[]) => {
         this.isLoading = false;
         this.categoriesData = response;
         this._utilitiesService.slideBanner();

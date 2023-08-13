@@ -1,9 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UtilitiesService } from '../services/utilities/utilities.service';
 import { ApiService } from '../services/api/api.service';
 import { apiURL } from '../app.variable';
 import { ICartData } from '../interfaces/cart.interface';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -11,7 +10,6 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
-  sub1!: Subscription;
   isLoading = false;
   backgroundImageUrl!: string;
   cartData!: ICartData;

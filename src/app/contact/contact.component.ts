@@ -1,9 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api/api.service';
 import { UtilitiesService } from '../services/utilities/utilities.service';
 import { apiURL } from '../app.variable';
 import { IContactData } from '../interfaces/contact.interface';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-contact',
@@ -11,7 +10,6 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
-  sub1!: Subscription;
   isLoading = false;
   backgroundImageUrl!: string;
   contactData!: IContactData;
@@ -38,6 +36,4 @@ export class ContactComponent implements OnInit {
       complete: () => '',
     });
   }
-
- 
 }

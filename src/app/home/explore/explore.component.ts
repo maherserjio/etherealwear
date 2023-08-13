@@ -11,7 +11,5 @@ export class ExploreComponent implements OnInit {
   apiUrl = apiURL;
   @Input() exploreData!: IExploreSection;
 
-  ngOnInit(): void {
-    console.log(this.exploreData);
-  }
+  ngOnInit(): void {}
 }

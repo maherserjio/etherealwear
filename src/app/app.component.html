@@ -2,7 +2,7 @@
 <ng-container *ngIf="!isLoading">
     <app-header></app-header>
     <router-outlet></router-outlet>
-    <app-footer *ngIf="footerData" [footerData]="footerData"></app-footer>
+    <app-footer *ngIf="footerData && categoriesData" [categoriesData]="categoriesData" [footerData]="footerData"></app-footer>
 </ng-container>
 
 <ng-container *ngIf="isLoading">
