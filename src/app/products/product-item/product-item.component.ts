@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { apiURL } from 'src/app/app.variable';
+import { CartService } from 'src/app/cart/cart.service';
 import {
   ICategory,
   ICollection,
@@ -9,6 +10,7 @@ import {
 import { ISingleProduct } from 'src/app/interfaces/single-product';
 import { ApiService } from 'src/app/services/api/api.service';
 import { UtilitiesService } from 'src/app/services/utilities/utilities.service';
+import Swal, { SweetAlertIcon } from 'sweetalert2';
 
 @Component({
   selector: 'app-product-item',
@@ -31,16 +33,50 @@ export class ProductItemComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private _apiService: ApiService,
-    private _utilitiesService: UtilitiesService
+    private _utilitiesService: UtilitiesService,
+    private cartService: CartService
   ) {}
+
   ngOnInit(): void {
     this.getProductItemData();
     this.getCategoriesData();
     this.listenToRouteParams();
   }
 
+  addToCart() {
+    // Add your logic to get the item to add to the cart
+    this.cartService.addToCart({
+      ...this.selectedProduct,
+      quantity: this.quantity,
+      totalPrice: this.totalPrice,
+    });
+    this.showMessage(
+      'Success',
+      'Product added to cart Succesfully',
+      'success',
+      false
+    );
+  }
+
+  showMessage(
+    title: string,
+    message: string,
+    icon: string,
+    showCancelButton = true
+  ) {
+    return Swal.fire({
+      title: title,
+      text: message,
+      icon: icon as SweetAlertIcon,
+      showCancelButton: showCancelButton,
+    });
+  }
+
   calculateTotalPrice() {
-    this.totalPrice = Math.ceil(+this.selectedProduct.price * this.quantity);
+    const price = parseFloat(
+      this.selectedProduct.price.replace(/[^0-9.-]+/g, '')
+    );
+    this.totalPrice = Math.ceil(price * this.quantity);
   }
 
   decreaseQuantity() {
@@ -68,7 +104,6 @@ export class ProductItemComponent implements OnInit {
   public listenToRouteParams(): void {
     this.route.params.subscribe((params) => {
       this.productId = params['id'];
-      console.log(this.productId);
     });
   }
 
