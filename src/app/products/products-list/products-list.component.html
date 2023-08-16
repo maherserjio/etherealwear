@@ -1,4 +1,3 @@
-<!-- ***** Products Area Starts ***** -->
 <section class="section" id="products">
     <div class="container">
         <div class="row">
@@ -12,52 +11,46 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
-                <div class="item">
-                    <div class="thumb">
-                        <div class="hover-content">
-                            <ul>
-                                <li><a class="rounded-circle"  [routerLink]="['/products', 1]"><i class="fa fa-eye"></i></a></li>
-                                <li><a class="rounded-circle"  [routerLink]="['/cart']"><i class="fa fa-shopping-cart"></i></a></li>
+            <ng-container *ngIf="visibleProducts.length > 0">
+                <div *ngFor="let product of visibleProducts" class="col-lg-4">
+                    <div class="item">
+                        <div class="thumb">
+                            <div class="hover-content">
+                                <ul>
+                                    <li><a class="rounded-circle"  [routerLink]="['/products', product.id]"><i class="fa fa-eye"></i></a></li>
+                                    <li><a class="rounded-circle"  [routerLink]="['/cart']"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <img *ngIf="product.main_Image" class="rounded-circle item-image" [src]="apiUrl + product.main_Image.url" alt="product-image">
+                        </div>
+                        <div class="down-content">
+                            <h4 [innerHTML]="product.Name | marked"></h4>
+                            <span [innerHTML]="product.price | marked"></span>
+                            <ul  class="stars">
+                                <li *ngFor="let star of  [].constructor(product.stars)"><i class="fa fa-star"></i></li>
                             </ul>
                         </div>
-                        <img class="rounded-circle item-image" src="assets/images/men-01.jpg" alt="">
                     </div>
-                    <div class="down-content">
-                        <h4>Classic Spring</h4>
-                        <span>$120.00</span>
-                        <ul class="stars">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
+                </div>
+                <div class="col-lg-12">
+                    <div class="pagination">
+                        <ul>
+                            <li [ngClass]="{'active': page === currentPage}" *ngFor="let page of totalPages" (click)="changePage(page)" role="button" >
+                                <a  class="rounded-circle">{{page}}</a>
+                            </li>
                         </ul>
+                      </div>
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf="visibleProducts.length === 0"> 
+                <div class="container">
+                    <div class="row justify-content-center align-items-center" >
+                            <h2>no products available</h2>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="pagination">
-                    <ul>
-                        <li class="active">
-                            <a [routerLink]="['/products']" class="rounded-circle">1</a>
-                        </li>
-                        <li >
-                            <a [routerLink]="['/products']" class="rounded-circle">2</a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['/products']" class="rounded-circle">3</a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['/products']" class="rounded-circle">4</a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['/products']" class="rounded-circle">></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                </div>            
+            </ng-container>
+
         </div>
     </div>
 </section>
-<!-- ***** Products Area Ends ***** -->
