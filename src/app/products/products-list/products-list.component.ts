@@ -4,8 +4,8 @@ import { apiURL } from 'src/app/app.variable';
 import {
   ICategory,
   ICollection,
-  IProduct,
 } from 'src/app/interfaces/categories.interface';
+import { IProduct } from 'src/app/interfaces/home.interface';
 import { IProductData } from 'src/app/interfaces/product.interface';
 
 @Component({

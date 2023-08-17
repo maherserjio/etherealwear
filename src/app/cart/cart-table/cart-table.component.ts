@@ -40,7 +40,7 @@ export class CartTableComponent implements OnInit {
             'cartItemsInput'
           ) as HTMLInputElement;
           for (const item of this.cartItems) {
-            cartItemsValue += `${item.quantity} - ${item.Name} - ${item.price}`;
+            cartItemsValue += `  ${item.Name} - ${item.quantity} - ${item.price}`;
           }
           if (cartItemsInput) {
             cartItemsInput.value = cartItemsValue;

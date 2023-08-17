@@ -22,12 +22,12 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="first-image">
-                                <img class="rounded-circle top-image " [src]="apiUrl + exploreData.top_image.url" alt="top-image">
+                                <img *ngIf="exploreData.top_image" class="rounded-circle top-image " [src]="apiUrl + exploreData.top_image.url" alt="top-image">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="second-image">
-                                <img class="rounded-circle bottom-image"  [src]="apiUrl + exploreData.bottom_image.url" alt="bottom-image">
+                                <img *ngIf="exploreData.bottom_image" class="rounded-circle bottom-image"  [src]="apiUrl + exploreData.bottom_image.url" alt="bottom-image">
                             </div>
                         </div>
                     </div>

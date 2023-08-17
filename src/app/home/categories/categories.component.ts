@@ -15,8 +15,10 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {
     for (const category of this.categoriesData) {
       if (category.isMainCircle) {
-        this.mainCategoryCircleBackgroundImage =
-          apiURL + category.background_Image.url;
+        if (category.background_Image) {
+          this.mainCategoryCircleBackgroundImage =
+            apiURL + category.background_Image?.url;
+        }
       } else {
         this.filteredCategoriesCirlce.push(category);
       }

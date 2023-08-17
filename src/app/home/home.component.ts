@@ -44,8 +44,10 @@ export class HomeComponent implements OnInit {
         this._utilitiesService.slideBanner();
         this._utilitiesService.initializeCarouselConfig();
         this.homeData = response;
-        this.backgroundImageUrl =
-          apiURL + this.homeData.banner.background_Image.url;
+        if (this.homeData.banner.background_Image?.url) {
+          this.backgroundImageUrl =
+            apiURL + this.homeData.banner.background_Image.url;
+        }
       },
     });
   }

@@ -9,7 +9,7 @@
                                 <a class="round--button" [routerLink]="['/products']">Purchase Now!</a>
                             </div>
                         </div>
-                        <img class="rounded-circle main-banner-image" [src]="mainCategoryCircleBackgroundImage" alt="main-banner-image">
+                        <img *ngIf="mainCategoryCircleBackgroundImage" class="rounded-circle main-banner-image" [src]="mainCategoryCircleBackgroundImage" alt="main-banner-image">
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <img class="rounded-circle banner-images" [src]="apiUrl + filteredCategoriesCirlce[0].background_Image.url" alt="banner-image-1">
+                                    <img *ngIf="filteredCategoriesCirlce[0].background_Image" class="rounded-circle banner-images" [src]="apiUrl + filteredCategoriesCirlce[0].background_Image.url" alt="banner-image-1">
                                 </div>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <img class="rounded-circle banner-images" [src]="apiUrl + filteredCategoriesCirlce[1].background_Image.url" alt="banner-image-2">
+                                    <img *ngIf="filteredCategoriesCirlce[1].background_Image" class="rounded-circle banner-images" [src]="apiUrl + filteredCategoriesCirlce[1].background_Image.url" alt="banner-image-2">
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <img class="rounded-circle banner-images" [src]="apiUrl + filteredCategoriesCirlce[2].background_Image.url" alt="banner-image-3">
+                                    <img *ngIf="filteredCategoriesCirlce[2].background_Image" class="rounded-circle banner-images" [src]="apiUrl + filteredCategoriesCirlce[2].background_Image.url" alt="banner-image-3">
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <img class="rounded-circle banner-images" [src]="apiUrl + filteredCategoriesCirlce[3].background_Image.url" alt="banner-image-4">
+                                    <img  *ngIf="filteredCategoriesCirlce[3].background_Image" class="rounded-circle banner-images" [src]="apiUrl + filteredCategoriesCirlce[3].background_Image.url" alt="banner-image-4">
                                 </div>
                             </div>
                         </div>

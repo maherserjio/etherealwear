@@ -5,8 +5,8 @@ import { CartService } from 'src/app/cart/cart.service';
 import {
   ICategory,
   ICollection,
-  IProduct,
 } from 'src/app/interfaces/categories.interface';
+import { IProduct } from 'src/app/interfaces/home.interface';
 import { ISingleProduct } from 'src/app/interfaces/single-product';
 import { ApiService } from 'src/app/services/api/api.service';
 import { UtilitiesService } from 'src/app/services/utilities/utilities.service';
@@ -29,7 +29,7 @@ export class ProductItemComponent implements OnInit {
   selectedProduct!: IProduct;
   quantity: number = 1;
   totalPrice: any;
-
+  showCheckOutForm = false;
   constructor(
     private route: ActivatedRoute,
     private _apiService: ApiService,
@@ -41,6 +41,44 @@ export class ProductItemComponent implements OnInit {
     this.getProductItemData();
     this.getCategoriesData();
     this.listenToRouteParams();
+  }
+
+  public submitForm(): void {
+    const form = document.getElementById('checkout') as HTMLFormElement;
+    form.submit();
+    this.showMessage(
+      'Success',
+      'We received your order! Our sales representative will contact you soon. Thanks for shopping with us!',
+      'success',
+      false
+    );
+  }
+
+  preOrder() {
+    this.showMessage(
+      'Checkout',
+      'Are you sure you want to preOrder?',
+      'warning',
+      true
+    ).then((result) => {
+      if (result.isConfirmed) {
+        this.showCheckOutForm = true;
+        setTimeout(() => {
+          let cartItemsValue = '';
+          let cartItemsInput = document.getElementById(
+            'cartItemsInput'
+          ) as HTMLInputElement;
+          cartItemsValue += `PreOrder product - ${this.selectedProduct.Name} `;
+          if (cartItemsInput) {
+            cartItemsInput.value = cartItemsValue;
+          }
+        }, 500);
+      } else {
+        this.showCheckOutForm = false;
+        // User clicked on the cancel button or closed the popup
+        // Handle the cancellation or do nothing
+      }
+    });
   }
 
   addToCart() {
