@@ -17,7 +17,7 @@ export class CategoriesComponent implements OnInit {
       if (category.isMainCircle) {
         if (category.background_Image) {
           this.mainCategoryCircleBackgroundImage =
-            apiURL + category.background_Image?.url;
+            apiURL + category.background_Image?.formats?.medium?.url;
         }
       } else {
         this.filteredCategoriesCirlce.push(category);

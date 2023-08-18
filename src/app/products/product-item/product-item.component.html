@@ -7,9 +7,9 @@
                 <div class="col-lg-8">
                     <div class="left-images">
                         <img *ngIf="selectedProduct.details_Top_Image"
-                            [src]="apiUrl + selectedProduct.details_Top_Image.url" alt="product-top-image">
+                            [src]="apiUrl + selectedProduct.details_Top_Image.formats.medium?.url" alt="product-top-image">
                         <img *ngIf="selectedProduct.details_Bottom_Image"
-                            [src]="apiUrl + selectedProduct.details_Bottom_Image.url" alt="product-bottom-image">
+                            [src]="apiUrl + selectedProduct.details_Bottom_Image.formats.medium?.url" alt="product-bottom-image">
                     </div>
                 </div>
                 <div class="col-lg-4">

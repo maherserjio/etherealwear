@@ -134,8 +134,11 @@ export class ProductItemComponent implements OnInit {
       .get('single-product')
       .subscribe((response: ISingleProduct) => {
         this.singleProductData = response;
-        this.backgroundImageUrl =
-          apiURL + this.singleProductData.banner.background_Image.url;
+        if (this.singleProductData.banner.background_Image) {
+          this.backgroundImageUrl =
+            apiURL +
+            this.singleProductData.banner.background_Image.formats.small?.url;
+        }
       });
   }
 

@@ -31,8 +31,10 @@ export class CartComponent implements OnInit {
         this.isLoading = false;
         this._utilitiesService.slideBanner();
         this.cartData = response;
-        this.backgroundImageUrl =
-          apiURL + this.cartData.banner.background_Image.url;
+        if (this.cartData.banner.background_Image) {
+          this.backgroundImageUrl =
+            apiURL + this.cartData.banner.background_Image.formats.small?.url;
+        }
       },
     });
   }

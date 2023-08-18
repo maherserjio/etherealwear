@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="left-image">
-                    <img *ngIf="skillsData.image" class="rounded-circle left-image-desktop" [src]="apiUrl + skillsData.image.url" alt="image">
+                    <img *ngIf="skillsData.image" class="rounded-circle left-image-desktop" [src]="apiUrl + skillsData.image.formats.medium?.url" alt="image">
                 </div>
             </div>
             <div class="col-lg-6">

@@ -20,7 +20,7 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
-                    <img class="rounded-circle " [src]="apiUrl + imageItem.background_image.url" alt="social-media-image">
+                    <img *ngIf="imageItem.background_image" class="rounded-circle " [src]="apiUrl + imageItem.background_image.formats.medium?.url" alt="social-media-image">
                 </div>
             </div>
 

@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
         this.homeData = response;
         if (this.homeData.banner.background_Image?.url) {
           this.backgroundImageUrl =
-            apiURL + this.homeData.banner.background_Image.url;
+            apiURL + this.homeData.banner.background_Image.formats.small?.url;
         }
       },
     });

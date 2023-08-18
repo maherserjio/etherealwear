@@ -29,8 +29,11 @@ export class ContactComponent implements OnInit {
         this.isLoading = false;
         this._utilitiesService.slideBanner();
         this.contactData = response;
-        this.backgroundImageUrl =
-          apiURL + this.contactData.banner.background_Image.url;
+        if (this.contactData.banner.background_Image) {
+          this.backgroundImageUrl =
+            apiURL +
+            this.contactData.banner.background_Image.formats.small?.url;
+        }
       },
       error: (e) => console.error(e),
       complete: () => '',

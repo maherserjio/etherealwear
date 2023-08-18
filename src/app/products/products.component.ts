@@ -31,8 +31,11 @@ export class ProductsComponent implements OnInit {
     this._apiService.get('products').subscribe({
       next: (response: IProductData) => {
         this.productsData = response;
-        this.backgroundImageUrl =
-          apiURL + this.productsData.banner.background_Image.url;
+        if (this.productsData.banner.background_Image) {
+          this.backgroundImageUrl =
+            apiURL +
+            this.productsData.banner.background_Image.formats.small?.url;
+        }
       },
       error: (e) => console.error(e),
       complete: () => {},
