@@ -7,6 +7,7 @@ import {
 } from 'src/app/interfaces/categories.interface';
 import { IProduct } from 'src/app/interfaces/home.interface';
 import { IProductData } from 'src/app/interfaces/product.interface';
+import { UtilitiesService } from 'src/app/services/utilities/utilities.service';
 
 @Component({
   selector: 'app-products-list',
@@ -23,7 +24,11 @@ export class ProductsListComponent implements OnInit {
   visibleProducts: IProduct[] = [];
   currentPage = 1;
   pageSize = 9;
-  constructor(private route: ActivatedRoute) {}
+  isLoading = true;
+  constructor(
+    private route: ActivatedRoute,
+    private _utitlitiesService: UtilitiesService
+  ) {}
 
   ngOnInit(): void {
     this.listenToRouteParams();
@@ -33,6 +38,7 @@ export class ProductsListComponent implements OnInit {
     const startIndex = (this.currentPage - 1) * this.pageSize;
     const endIndex = startIndex + this.pageSize;
     this.visibleProducts = this.selectedProducts.slice(startIndex, endIndex);
+    this.isLoading = false;
   }
 
   public changePage(page: number): void {
@@ -50,6 +56,10 @@ export class ProductsListComponent implements OnInit {
   public listenToRouteParams(): void {
     this.route.queryParams.subscribe((params) => {
       const param1 = params['categoryName'];
+      this._utitlitiesService.slideBanner();
+      this.selectedProducts = [];
+      this.visibleProducts = [];
+      this.selectedCategoryCollections = [];
       if (param1) {
         this.selectedCategory = this.categoriesData.find(
           (category: ICategory) => {
