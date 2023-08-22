@@ -1,3 +1,8 @@
+.bottom-image,
+.top-image {
+  object-fit: cover;
+}
+
 .round--button {
   display: flex;
   align-items: center;
@@ -8,6 +13,7 @@
 }
 
 @media (max-width: 2560px) {
+
   .bottom-image,
   .top-image {
     height: 250px;
@@ -15,6 +21,7 @@
 }
 
 @media (max-width: 1440px) {
+
   .bottom-image,
   .top-image {
     height: 250px;
@@ -22,6 +29,7 @@
 }
 
 @media (max-width: 1024px) {
+
   .bottom-image,
   .top-image {
     height: 200px;
@@ -47,8 +55,9 @@
 }
 
 @media only screen and (max-width: 375px) {
+
   .bottom-image,
-  .top-image{
+  .top-image {
     height: 350px;
   }
 }
