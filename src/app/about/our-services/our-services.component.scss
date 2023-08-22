@@ -1,4 +1,8 @@
-
+.item-image-1,
+.item-image-3,
+.item-image-2{
+    object-fit: cover;
+}
   @media (max-width: 2560px) {
     .item-image-1,
     .item-image-3,

@@ -36,10 +36,6 @@
                     <div class="right-content">
                         <h4 [innerHTML]="selectedProduct.Name| marked"></h4>
                         <span [innerHTML]="selectedProduct.price| marked" class="price"></span>
-                        <ul class="stars">
-                            <li *ngFor="let star of  [].constructor(selectedProduct.stars)"><i class="fa fa-star"></i>
-                            </li>
-                        </ul>
                         <span [innerHTML]="selectedProduct.description | marked"></span>
                         <ng-container *ngIf="selectedProduct.isSoldOut">
                             <div class="main-border-button d-flex align-items-center justify-content-center "><a

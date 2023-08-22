@@ -1,3 +1,7 @@
+.item-image{
+    object-fit: cover;
+}
+
 @media (max-width: 2560px) {
     .item-image {
         height: 300px;

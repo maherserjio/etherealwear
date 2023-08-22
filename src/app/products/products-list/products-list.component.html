@@ -18,7 +18,6 @@
                             <div class="hover-content">
                                 <ul>
                                     <li><a class="rounded-circle"  [routerLink]="['/products', product.id]"><i class="fa fa-eye"></i></a></li>
-                                    <li><a class="rounded-circle"  [routerLink]="['/cart']"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
 
@@ -36,9 +35,6 @@
                         <div class="down-content">
                             <h4 [innerHTML]="product.Name | marked"></h4>
                             <span [innerHTML]="product.price | marked"></span>
-                            <ul  class="stars">
-                                <li *ngFor="let star of  [].constructor(product.stars)"><i class="fa fa-star"></i></li>
-                            </ul>
                         </div>
                     </div>
                 </div>

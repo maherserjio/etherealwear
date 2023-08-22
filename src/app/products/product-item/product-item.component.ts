@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { apiURL } from 'src/app/app.variable';
 import { CartService } from 'src/app/cart/cart.service';
 import {
@@ -32,6 +32,7 @@ export class ProductItemComponent implements OnInit {
   showCheckOutForm = false;
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private _apiService: ApiService,
     private _utilitiesService: UtilitiesService,
     private cartService: CartService
@@ -50,7 +51,8 @@ export class ProductItemComponent implements OnInit {
       'Success',
       'We received your order! Our sales representative will contact you soon. Thanks for shopping with us!',
       'success',
-      false
+      false,
+      ''
     );
   }
 
@@ -59,7 +61,8 @@ export class ProductItemComponent implements OnInit {
       'Checkout',
       'Are you sure you want to preOrder?',
       'warning',
-      true
+      true,
+      ''
     ).then((result) => {
       if (result.isConfirmed) {
         this.showCheckOutForm = true;
@@ -92,21 +95,35 @@ export class ProductItemComponent implements OnInit {
       'Success',
       'Product added to cart Succesfully',
       'success',
-      false
-    );
+      true,
+      'Procced to Cart',
+      'Continue Shopping'
+    ).then((result) => {
+      if (result.isConfirmed) {
+        this.router.navigate(['/cart']);
+      } else {
+        // User clicked on the cancel button or closed the popup
+        // Handle the cancellation or do nothing
+      }
+    });
   }
 
   showMessage(
     title: string,
     message: string,
     icon: string,
-    showCancelButton = true
+    showCancelButton = true,
+    confirmButtonText: string,
+    cancelButtonText = 'Cancel'
   ) {
     return Swal.fire({
       title: title,
       text: message,
       icon: icon as SweetAlertIcon,
       showCancelButton: showCancelButton,
+      confirmButtonText: confirmButtonText,
+      confirmButtonColor: '#000',
+      cancelButtonText: cancelButtonText,
     });
   }
 
