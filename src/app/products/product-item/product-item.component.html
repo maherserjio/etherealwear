@@ -14,19 +14,19 @@
                         </ng-container>
 
                         <ng-template #alternativeImage>
-                            <img [src]="apiUrl + selectedProduct.details_Top_Image?.formats?.thumbnail?.url"
+                            <img *ngIf="selectedProduct.details_Top_Image?.url" [src]="apiUrl + selectedProduct.details_Top_Image?.url"
                                 alt="product-top-image">
                         </ng-template>
 
                         <ng-container
                             *ngIf="selectedProduct.details_Bottom_Image?.formats?.medium ; else alternativeImage">
                             <img [src]="apiUrl + selectedProduct.details_Bottom_Image?.formats?.medium?.url"
-                                alt="product-top-image">
+                                alt="product-bot-image">
                         </ng-container>
 
                         <ng-template #alternativeImage>
-                            <img [src]="apiUrl + selectedProduct.details_Bottom_Image?.formats?.thumbnail?.url"
-                                alt="product-top-image">
+                            <img *ngIf="selectedProduct.details_Bottom_Image?.url" [src]="apiUrl + selectedProduct.details_Bottom_Image?.url"
+                                alt="product-bot-image">
                         </ng-template>
 
 

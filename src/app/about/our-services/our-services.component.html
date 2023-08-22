@@ -12,7 +12,7 @@
                 <div class="service-item">
                     <h4 [innerHTML]="card.title | marked"></h4>
                     <p [innerHTML]="card.description | marked"></p>
-                    <img *ngIf="card.image" class="rounded-circle item-image-1" [src]="apiUrl + card.image.formats.medium?.url" alt="car-image">
+                    <img *ngIf="card.image" class="rounded-circle item-image-1" [src]="apiUrl + card.image.formats.medium?.url" alt="card-image">
                 </div>
             </div>
             

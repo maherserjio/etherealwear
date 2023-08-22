@@ -34,7 +34,7 @@ export class ProductsComponent implements OnInit {
         if (this.productsData.banner.background_Image) {
           this.backgroundImageUrl =
             apiURL +
-            this.productsData.banner.background_Image.formats.small?.url;
+            this.productsData.banner.background_Image.formats.medium?.url;
         }
       },
       error: (e) => console.error(e),

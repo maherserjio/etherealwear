@@ -53,13 +53,18 @@ export class ProductsListComponent implements OnInit {
       .map((_, index) => index + 1);
   }
 
+  public resets(): void {
+    this.selectedProducts = [];
+    this.visibleProducts = [];
+    this.selectedCategoryCollections = [];
+    this.currentPage = 1;
+  }
+
   public listenToRouteParams(): void {
     this.route.queryParams.subscribe((params) => {
       const param1 = params['categoryName'];
       this._utitlitiesService.slideBanner();
-      this.selectedProducts = [];
-      this.visibleProducts = [];
-      this.selectedCategoryCollections = [];
+      this.resets();
       if (param1) {
         this.selectedCategory = this.categoriesData.find(
           (category: ICategory) => {

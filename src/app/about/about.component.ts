@@ -46,7 +46,7 @@ export class AboutComponent implements OnInit {
         this.aboutData = response;
         if (this.aboutData.banner.background_Image) {
           this.backgroundImageUrl =
-            apiURL + this.aboutData.banner.background_Image.url;
+            apiURL + this.aboutData.banner.background_Image.formats.medium?.url;
         }
       },
       error: (e) => console.error(e),

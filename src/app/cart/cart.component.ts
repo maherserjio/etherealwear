@@ -33,7 +33,7 @@ export class CartComponent implements OnInit {
         this.cartData = response;
         if (this.cartData.banner.background_Image) {
           this.backgroundImageUrl =
-            apiURL + this.cartData.banner.background_Image.formats.small?.url;
+            apiURL + this.cartData.banner.background_Image.formats.medium?.url;
         }
       },
     });
