@@ -9,7 +9,7 @@
                     <div class="quote">
                         <i class="fa fa-quote-left"></i><p [innerHTML]="exploreData.quote | marked"></p>
                     </div>
-                    <p [innerHTML]="exploreData.quote | marked"></p>
+                    <p [innerHTML]="exploreData.bottom_description | marked"></p>
                     <div class="main-border-button">
                         <a class="round--button" [routerLink]="['/products']">Discover More</a>
                     </div>
