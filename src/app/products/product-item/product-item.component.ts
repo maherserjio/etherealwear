@@ -153,8 +153,7 @@ export class ProductItemComponent implements OnInit {
         this.singleProductData = response;
         if (this.singleProductData.banner.background_Image) {
           this.backgroundImageUrl =
-            apiURL +
-            this.singleProductData.banner.background_Image.formats.small?.url;
+            apiURL + this.singleProductData.banner.background_Image.url;
         }
       });
   }

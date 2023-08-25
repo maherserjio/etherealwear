@@ -14,13 +14,15 @@
     border-radius: 50%;
   }
 
+
   .main-banner-image,.banner-images{
     object-fit: cover;
+    height: 400px;
   }
 
   @media (max-width: 2560px) {
     .main-banner-image{
-      height: 1200px;
+      height: 800px;
     }
   }
   @media (max-width: 1440px) {
