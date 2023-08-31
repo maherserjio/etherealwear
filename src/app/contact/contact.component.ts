@@ -31,8 +31,7 @@ export class ContactComponent implements OnInit {
         this.contactData = response;
         if (this.contactData.banner.background_Image) {
           this.backgroundImageUrl =
-            apiURL +
-            this.contactData.banner.background_Image.formats.medium?.url;
+            apiURL + this.contactData.banner.background_Image.url;
         }
       },
       error: (e) => console.error(e),

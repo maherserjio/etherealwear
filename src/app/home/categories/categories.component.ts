@@ -10,6 +10,7 @@ export class CategoriesComponent implements OnInit {
   @Input() categoriesData!: ICategoriesCircleSection[];
   apiUrl = apiURL;
   mainCategoryCircleBackgroundImage!: string;
+  mainCategoryCircleText!: string;
   filteredCategoriesCirlce: ICategoriesCircleSection[] = [];
 
   ngOnInit(): void {
@@ -18,6 +19,7 @@ export class CategoriesComponent implements OnInit {
         if (category.background_Image) {
           this.mainCategoryCircleBackgroundImage =
             apiURL + category.background_Image?.formats?.medium?.url;
+          this.mainCategoryCircleText = category.title;
         }
       } else {
         this.filteredCategoriesCirlce.push(category);

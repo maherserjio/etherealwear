@@ -1,4 +1,7 @@
 <div class="main-banner" id="top">
+    <div class="container d-flex justify-content-center pb-5">
+        <h2>Home</h2>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6">
@@ -6,7 +9,7 @@
                     <div class="thumb">
                         <div class="inner-content">
                             <div class="main-border-button">
-                                <a class="round--button" [routerLink]="['/products']">Purchase Now!</a>
+                                <a class="round--button" [routerLink]="['/products']">{{mainCategoryCircleText}}</a>
                             </div>
                         </div>
                         <img *ngIf="mainCategoryCircleBackgroundImage" class="rounded-circle main-banner-image"

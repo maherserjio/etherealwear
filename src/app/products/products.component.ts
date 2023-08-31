@@ -33,8 +33,7 @@ export class ProductsComponent implements OnInit {
         this.productsData = response;
         if (this.productsData.banner.background_Image) {
           this.backgroundImageUrl =
-            apiURL +
-            this.productsData.banner.background_Image.formats.medium?.url;
+            apiURL + this.productsData.banner.background_Image?.url;
         }
       },
       error: (e) => console.error(e),

@@ -1,5 +1,11 @@
 <header class="header-area header-sticky">
     <div class="container">
+        <div class="d-flex align-items-center">
+            <a class="d-md-none float-right">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </a>
+        </div>
+ 
         <div class="row">
             <div class="d-flex col-12 justify-content-center col-md-6  justify-content-md-end">
                 <a [routerLink]="['/home']">
@@ -12,7 +18,7 @@
                     <ul class="nav">
                         <li class="scroll-to-section"><a [routerLink]="['home']"
                                 [routerLinkActive]="['active']">HOME</a></li>
-                        <li class="scroll-to-section"><a  [routerLink]="['products']"
+                        <li class="scroll-to-section"><a [routerLink]="['products']"
                                 [routerLinkActive]="['active']">PRODUCTS</a></li>
                         <li class="scroll-to-section"><a [routerLink]="['about']" [routerLinkActive]="['active']">ABOUT
                             </a></li>
