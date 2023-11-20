@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,9 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(private _router: Router){}
+  constructor(private _router: Router) { }
 
-  toCart():void{
+  toCart(): void {
     this._router.navigate(['/cart']);
   }
+
+  navigatoTo(route: string): void {
+    document.getElementById('menu-toggle')?.click();;
+    this._router.navigate([`/${route}`]);
+  }
+
 }
