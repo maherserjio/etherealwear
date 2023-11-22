@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { MainBannerComponent } from '../components/main-banner/main-banner.component';
 import { LoaderComponent } from '../components/loader/loader.component';
 import { MarkedPipe } from './pipes/marked.pipe';
+import { MaintenanceComponent } from '../components/maintenance/maintenance.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { MarkedPipe } from './pipes/marked.pipe';
     NewsLetterComponent,
     MainBannerComponent,
     LoaderComponent,
+    MaintenanceComponent,
     MarkedPipe,
   ],
   imports: [CommonModule, RouterModule],
@@ -21,6 +23,7 @@ import { MarkedPipe } from './pipes/marked.pipe';
     NewsLetterComponent,
     MainBannerComponent,
     LoaderComponent,
+    MaintenanceComponent,
     MarkedPipe,
   ],
 })
