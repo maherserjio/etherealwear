@@ -21,6 +21,10 @@ export class CartTableComponent implements OnInit {
 
   calculateTotalPrice(): void {
     for (const item of this.cartItems) {
+      const price = parseFloat(
+        item.price.replace(/[^0-9.-]+/g, '')
+      );
+      item.totalPrice =  Math.ceil(price * item.quantity);
       this.cartTotal += item.totalPrice!;
     }
   }

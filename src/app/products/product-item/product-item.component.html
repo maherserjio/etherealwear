@@ -1,5 +1,5 @@
 <ng-container *ngIf="!isLoading">
-    <app-main-banner *ngIf="singleProductData.banner" [title]="singleProductData.banner.title"
+    <app-main-banner *ngIf="singleProductData?.banner" [title]="singleProductData.banner.title"
         [backgroundImageUrl]="backgroundImageUrl"></app-main-banner>
     <section class="section" id="product">
         <div class="container">

@@ -39,6 +39,8 @@ export class ProductItemComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.quantity = 1;
+    this.totalPrice = 0
     this.getProductItemData();
     this.getCategoriesData();
     this.listenToRouteParams();
@@ -86,11 +88,37 @@ export class ProductItemComponent implements OnInit {
 
   addToCart() {
     // Add your logic to get the item to add to the cart
-    this.cartService.addToCart({
-      ...this.selectedProduct,
-      quantity: this.quantity,
-      totalPrice: this.totalPrice,
-    });
+    if (this.cartService.cartItems.length > 0) {
+      const isProductAvailableInCart = this.cartService.cartItems.find(item => {
+        if (item.id === this.selectedProduct.id) {
+          item.quantity += this.quantity;
+          const price = parseFloat(
+            item.price.replace(/[^0-9.-]+/g, '')
+          );
+          item.totalPrice = price * item.quantity;
+          return true;
+        }
+        return false;
+      });
+
+      if (!isProductAvailableInCart) {
+        this.cartService.addToCart({
+          ...this.selectedProduct,
+          quantity: this.quantity,
+          totalPrice: this.totalPrice,
+        });
+      }
+
+    } else {
+      this.cartService.addToCart({
+        ...this.selectedProduct,
+        quantity: this.quantity,
+        totalPrice: this.totalPrice,
+      });
+    }
+
+
+
     this.showMessage(
       'Success',
       'Product added to cart Succesfully',
@@ -107,6 +135,9 @@ export class ProductItemComponent implements OnInit {
       }
     });
   }
+
+
+
 
   showMessage(
     title: string,

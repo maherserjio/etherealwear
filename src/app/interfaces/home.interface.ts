@@ -121,7 +121,7 @@ export interface IProduct {
   Name: string;
   description: string;
   price: string;
-  quantity?: number;
+  quantity: number;
   totalPrice?: number;
   __v: number;
   main_Image?: IImage;
